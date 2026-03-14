@@ -1,0 +1,17 @@
+package com.shopnow.order.enums;
+
+public enum OrderStatus {
+    CREATED,
+    PAYMENT_PENDING,
+    PAYMENT_CONFIRMED,
+    PROCESSING,
+    ALLOCATED_TO_WAREHOUSE,
+    PACKED,
+    SHIPPED,
+    OUT_FOR_DELIVERY,
+    DELIVERED,
+    CANCELLED,
+    RETURN_REQUESTED,
+    RETURNED,
+    REFUNDED
+}

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: shopnow-order-management
+description: Helm chart for ShopNow order management service
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

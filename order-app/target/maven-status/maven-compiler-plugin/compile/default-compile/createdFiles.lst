@@ -1,2 +1,4 @@
-com/shopnow/orderapp/config/DataSeeder.class
-com/shopnow/orderapp/OrderApplication.class
+com/shopnow/order/security/SecurityConfig.class
+com/shopnow/order/OrderApplication.class
+com/shopnow/order/SpringAuditorAware.class
+com/shopnow/order/config/SwaggerConfig.class

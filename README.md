@@ -1,41 +1,89 @@
 # ShopNow Order Management Backend
 
-This project is a standalone layered Maven multi-module Spring Boot backend for the ShopNow e-commerce case study.
+This repository implements the backend side of the ShopNow order management case study as a Maven multi-module Spring Boot system.
 
 ## Modules
 
-- `order-api`: domain models, DTOs, enums, API contracts
-- `order-service`: repositories, business services, orchestration, controller implementations
-- `order-app`: Spring Boot bootstrap, runtime configuration, demo seed data
+- `order-api`: system-of-record entities, DTOs, enums, wrappers, controller interfaces
+- `order-service`: repositories, business services, mapper layer, Feign integrations, controller implementations
+- `order-app`: Spring Boot startup, security, OpenAPI, cache/async config, seed data, runtime properties
 
-## Architecture Highlights
+## Backend Coverage
 
-- Real-time order placement with inventory reservation
-- Warehouse routing based on available stock and route priority
-- Shipment creation and carrier tracking reference support
-- Return and refund initiation flow
-- Customer order history lookup
-- Sales trend reporting endpoint scaffold
+- Order processing with payment validation, inventory reservation, and warehouse allocation
+- Inventory tracking by warehouse
+- Shipment creation and shipment lookup by tracking number
+- Customer order-history access for support use cases
+- Return request and refund initiation flow
+- Sales trend endpoint for sales and marketing analysis
 
-## Package Layers
+## Layer Mapping
 
-- `controller`: REST API contracts in `order-api`, REST implementations in `order-service`
-- `dto`: request/response models
-- `model`: JPA system-of-record entities
-- `repository`: persistence access
-- `service`: business interfaces
-- `service.impl`: business implementations
-- `service.orchestration`: order placement workflow and warehouse routing
-- `config`: application configuration and seed data in `order-app`
+- `model` -> persistent database entities with uppercase table and column naming
+- `dto` -> API payloads for create/update/read operations
+- `repository` -> JPA persistence layer
+- `service` -> business contracts
+- `service.impl` -> business workflow implementations
+- `mapper` -> entity/DTO conversion layer
+- `controller` -> API contracts
+- `controller.impl` -> HTTP endpoint implementations
+- `config`, `security`, `mock` -> application startup and operational configuration
+
+## Not In Scope For Backend
+
+- Front-end screens for customers, sales, support, and warehouse staff are not part of this repository.
+- Live third-party shipping and payment systems are represented by Feign integration contracts with safe fallback behavior.
 
 ## Build
 
 ```bash
-mvn -f /Users/ent-00290/Documents/Office/atm-rollout/Backend/shopnow-order-management/pom.xml clean test
+mvn clean test
 ```
 
 ## Run
 
 ```bash
-mvn -f /Users/ent-00290/Documents/Office/atm-rollout/Backend/shopnow-order-management/pom.xml -pl order-app spring-boot:run
+mvn -pl order-app spring-boot:run
 ```
+
+The application uses MySQL from `application.properties`.
+
+## Authentication
+
+Use `POST /auth/login` to get a JWT token.
+
+Default credentials:
+
+- Username: `shopnow-admin`
+- Password: `shopnow123`
+
+## Deployment
+
+Build the jar and Docker image:
+
+```bash
+mvn clean package -DskipTests
+docker build -t shopnow-order-management:latest .
+```
+
+Helm chart files are under [helm-chart](/Users/ent-00290/Documents/Project/shopnow-order-management/helm-chart).
+
+Example install:
+
+```bash
+helm install shopnow ./helm-chart
+```
+
+## Realistic Scope
+
+Removed demo-only startup code and unused framework wiring:
+
+- no mock seed loader
+- no unused async executor config
+- no unused cache manager config
+
+Operational support APIs:
+
+- `GET /shipment/order/{orderId}`
+- `GET /payments/order/{orderId}`
+- `GET /returns`

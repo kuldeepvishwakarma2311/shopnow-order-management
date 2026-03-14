@@ -1,0 +1,6 @@
+/order-api/target/
+/order-service/target/
+/order-app/target/
+/.idea/
+/.vscode/
+/.DS_Store
