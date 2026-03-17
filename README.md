@@ -57,23 +57,6 @@ Default credentials:
 - Username: `shopnow-admin`
 - Password: `shopnow123`
 
-## Deployment
-
-Build the jar and Docker image:
-
-```bash
-mvn clean package -DskipTests
-docker build -t shopnow-order-management:latest .
-```
-
-Helm chart files are under [helm-chart](/Users/ent-00290/Documents/Project/shopnow-order-management/helm-chart).
-
-Example install:
-
-```bash
-helm install shopnow ./helm-chart
-```
-
 ## Realistic Scope
 
 Removed demo-only startup code and unused framework wiring:
@@ -87,3 +70,9 @@ Operational support APIs:
 - `GET /shipment/order/{orderId}`
 - `GET /payments/order/{orderId}`
 - `GET /returns`
+
+## Build
+
+```bash
+mvn clean package -DskipTests
+```

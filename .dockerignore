@@ -1,9 +1,0 @@
-.git
-.gitignore
-.idea
-.vscode
-**/target/classes
-**/target/test-classes
-**/surefire-reports
-doc
-configuration/mysql

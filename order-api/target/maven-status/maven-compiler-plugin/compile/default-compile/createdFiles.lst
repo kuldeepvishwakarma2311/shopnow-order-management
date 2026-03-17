@@ -24,9 +24,11 @@ com/shopnow/order/dto/OrderItemRequestDTO.class
 com/shopnow/order/annotation/StandardApiResponses.class
 com/shopnow/order/model/Order.class
 com/shopnow/order/dto/ProductDTO.class
+com/shopnow/order/controller/AuthController.class
 com/shopnow/order/model/Customer$CustomerBuilder.class
 com/shopnow/order/enums/ReturnStatus.class
 com/shopnow/order/model/Shipment$ShipmentBuilder.class
+com/shopnow/order/dto/LoginRequestDTO.class
 com/shopnow/order/dto/SalesTrendDTO.class
 com/shopnow/order/enums/PaymentStatus.class
 com/shopnow/order/controller/InventoryController.class
@@ -36,6 +38,7 @@ com/shopnow/order/controller/AnalyticsController.class
 com/shopnow/order/model/Warehouse$WarehouseBuilder.class
 com/shopnow/order/model/Order$OrderBuilder.class
 com/shopnow/order/enums/EntityStatus.class
+com/shopnow/order/dto/JwtResponseDTO.class
 com/shopnow/order/model/Payment.class
 com/shopnow/order/model/ReturnRequest.class
 com/shopnow/order/controller/WarehouseController.class

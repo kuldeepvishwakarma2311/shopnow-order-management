@@ -1,4 +1,6 @@
 com/shopnow/order/security/SecurityConfig.class
+com/shopnow/order/security/JwtAuthenticationFilter.class
+com/shopnow/order/security/JwtTokenProvider.class
 com/shopnow/order/OrderApplication.class
 com/shopnow/order/SpringAuditorAware.class
 com/shopnow/order/config/SwaggerConfig.class

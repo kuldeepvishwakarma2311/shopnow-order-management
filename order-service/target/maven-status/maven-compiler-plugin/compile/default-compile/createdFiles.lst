@@ -7,11 +7,14 @@ com/shopnow/order/mapper/PaymentMapper.class
 com/shopnow/order/generic/PaymentValidationResponse.class
 com/shopnow/order/controller/impl/OrderControllerImpl.class
 com/shopnow/order/service/impl/PaymentServiceImpl.class
+com/shopnow/order/controller/impl/AuthControllerImpl.class
 com/shopnow/order/controller/impl/AnalyticsControllerImpl.class
 com/shopnow/order/mapper/PaymentMapperImpl.class
 com/shopnow/order/repository/ReturnRequestRepository.class
 com/shopnow/order/generic/PaymentValidationRequest.class
 com/shopnow/order/repository/OrderItemRepository.class
+com/shopnow/order/service/impl/AuthServiceImpl.class
+com/shopnow/order/service/TokenProviderService.class
 com/shopnow/order/generic/BusinessException.class
 com/shopnow/order/service/CustomerService.class
 com/shopnow/order/controller/impl/ReturnControllerImpl.class
@@ -34,6 +37,7 @@ com/shopnow/order/service/impl/InventoryServiceImpl.class
 com/shopnow/order/mapper/ProductMapper.class
 com/shopnow/order/mapper/InventoryMapper.class
 com/shopnow/order/mapper/ReturnRequestMapperImpl.class
+com/shopnow/order/service/AuthService.class
 com/shopnow/order/repository/InventoryRepository.class
 com/shopnow/order/service/impl/OrderServiceImpl.class
 com/shopnow/order/mapper/OrderMapper.class
